@@ -20,6 +20,17 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     boolean isNotImg;
     public TextView res;
     public int tag;
+    public int tag1;
+    public int tag2;
+    public TextView res1;
+    public TextView res2;
+    public TextView res3;
+    public TextView res4;
+    public TextView res5;
+    public TextView res6;
+    public ImageView res1_image;
+    public ImageView res2_image;
+    public ImageView res3_image;
 
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -32,6 +43,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         spinner.setOnItemSelectedListener(this);
         isNotImg=true;
         tag=0;
+        tag1=0;
+        tag2=0;
     }
     public void calculate(View v){
         Random random=new Random ();
@@ -39,14 +52,61 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         show_image= (ImageView) findViewById(R.id.imageView);
         full_name= (EditText) findViewById(R.id.fullName);
         res= (TextView) findViewById(R.id.result);
+        res1= (TextView) findViewById(R.id.result1);
+        res2= (TextView) findViewById(R.id.result2);
+        res3= (TextView) findViewById(R.id.result3);
+        res4= (TextView) findViewById(R.id.result4);
+        res5= (TextView) findViewById(R.id.result5);
+        res6= (TextView) findViewById(R.id.result6);
+        res1_image= (ImageView) findViewById(R.id.imageResult1);
+        res2_image= (ImageView) findViewById(R.id.imageResult2);
+        res3_image= (ImageView) findViewById(R.id.imageResult3);
         if (full_name.getText().toString().equals("") || isNotImg){
             Toast.makeText(this, "Enter your name and select a language to see your love index", Toast.LENGTH_SHORT).show();
         }
         else{
+            int rand=random.nextInt(101);
             show_image.setImageResource(tag);
             show_image.animate().alpha(1.0F);
-            res.setText(full_name.getText().toString()+" has "+random.nextInt(101)+"% compatibility with ");
+            res.setText(full_name.getText().toString()+" has "+rand+"% compatibility with ");
             res.animate().alpha(1.0F);
+            if (res2.getText().toString().length()!=0){
+                res3.setText(res2.getText().toString());
+                res3.animate().alpha(1.0F);
+            }
+            if (res1.getText().toString().length()!=0){
+                res2.setText(res1.getText().toString());
+                res2.animate().alpha(1.0F);
+            }
+
+            res1.setText(full_name.getText().toString());
+            res1.animate().alpha(1.0F);
+            if (res5.getText().toString().length()!=0){
+                res6.setText(res5.getText().toString());
+                res6.animate().alpha(1.0F);
+            }
+            if (res4.getText().toString().length()!=0){
+                res5.setText(res4.getText().toString());
+                res5.animate().alpha(1.0F);
+            }
+
+            res4.setText(rand+"%");
+            res4.animate().alpha(1.0F);
+            if (tag2!=0){
+                res3_image.setImageResource(tag2);
+                res3_image.animate().alpha(1.0F);
+            }
+            if (tag1!=0){
+                res2_image.setImageResource(tag1);
+                res2_image.animate().alpha(1.0F);
+                tag2=tag1;
+            }
+
+            res1_image.setImageResource(tag);
+            res1_image.animate().alpha(1.0F);
+            tag1=tag;
+
+
         }
 
 
