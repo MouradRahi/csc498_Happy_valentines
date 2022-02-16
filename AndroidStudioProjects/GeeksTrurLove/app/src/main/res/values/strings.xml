@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Geek\'s Trur Love</string>
+
+    <string-array name="languages">
+        <item>--Select item--</item>
+        <item>Python</item>
+        <item>C</item>
+        <item>C#</item>
+        <item>C++</item>
+        <item>Java</item>
+        <item>Kotlin</item>
+    </string-array>
 </resources>
