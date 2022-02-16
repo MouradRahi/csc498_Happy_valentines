@@ -43,8 +43,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             Toast.makeText(this, "Enter your name and select a language to see your love index", Toast.LENGTH_SHORT).show();
         }
         else{
-            //show_image.setImageResource();
-            //random.nextInt(101);
+            show_image.setImageResource(tag);
+            show_image.animate().alpha(1.0F);
+            res.setText(full_name.getText().toString()+" has "+random.nextInt(101)+"% compatibility with ");
+            res.animate().alpha(1.0F);
         }
 
 
@@ -56,26 +58,32 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         test_image= (ImageView) findViewById(R.id.imageView2);
         if (position==1){
             test_image.setImageResource(R.drawable.img1);
+            tag=R.drawable.img1;
             isNotImg=false;
         }
         if (position==2){
             test_image.setImageResource(R.drawable.img2);
+            tag=R.drawable.img2;
             isNotImg=false;
         }
         if (position==3){
             test_image.setImageResource(R.drawable.img3);
+            tag=R.drawable.img3;
             isNotImg=false;
         }
         if (position==4){
             test_image.setImageResource(R.drawable.img4);
+            tag=R.drawable.img4;
             isNotImg=false;
         }
         if (position==5){
             test_image.setImageResource(R.drawable.img5);
+            tag=R.drawable.img5;
             isNotImg=false;
         }
         if (position==6){
             test_image.setImageResource(R.drawable.img6);
+            tag=R.drawable.img6;
             isNotImg=false;
         }
 
